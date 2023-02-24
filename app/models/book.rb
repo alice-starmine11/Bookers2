@@ -1,4 +1,3 @@
 class Book < ApplicationRecord
-  has_one_attached :image
-  belogs_to :user
+  belongs_to :user
 end
