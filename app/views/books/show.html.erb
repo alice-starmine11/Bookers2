@@ -15,9 +15,13 @@
       </table>
       <div class="row">
         <% if @user.id == current_user.id %>
-        <%= link_to "profile edit", edit_user_path(current_user),class:"btn btn-outline-secondary btn-block" %>
+        <%= link_to  edit_user_path(current_user),class:"btn btn-outline-secondary btn-block" do %>
+          <i class="fas fa-user-cog"></i>
+        <% end %>
         <% else %>
-        <%= link_to "profile edit", user_path(current_user),class:"btn btn-outline-secondary btn-block" %>
+        <%= link_to  user_path(current_user),class:"btn btn-outline-secondary btn-block"  do %>
+          <i class="fas fa-user-cog"></i>
+        <% end %>
         <% end %>
       </div>
       <h2 class="mt-5">New book</h2>
