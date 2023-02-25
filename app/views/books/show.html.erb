@@ -1,18 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="col-md-3 mt-5">
-      <h2>User info</h2>
-      <%= image_tag @user.get_profile_image(100,100) %>
-      <table class="table table-user-info">
-        <tr>
-          <th>name</th>
-          <th><%= @user.name %></th>
-        </tr>
-        <tr>
-          <th>introduction</th>
-          <th><%= @user.introduction %></th>
-        </tr>
-      </table>
+
+      <%= render 'users/info',user: @user %>
+
       <div class="row">
         <% if @user.id == current_user.id %>
         <%= link_to  edit_user_path(current_user),class:"btn btn-outline-secondary btn-block" do %>
@@ -24,18 +15,9 @@
         <% end %>
         <% end %>
       </div>
-      <h2 class="mt-5">New book</h2>
-        <%= form_with model: @newbook do |f| %>
-          <div class="field">
-            <%= f.label :title ,"Title" %><br>
-            <%= f.text_field :title,class:"form-control" %>
-          </div>
-          <div class="field">
-            <%= f.label :body,"Opinion" %><br>
-            <%= f.text_area :body,class:"form-control" %>
-          </div>
-          <%= f.submit 'Create Book',class:"btn btn-success btn-block mt-3"  %>
-        <% end %>
+
+      <%= render 'newbook',book: @newbook %>
+
     </div>
 
     <div class="col-md-8 offset-md-1 mt-5">

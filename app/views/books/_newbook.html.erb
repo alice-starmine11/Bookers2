@@ -1,0 +1,12 @@
+<h2 class="mt-5">New book</h2>
+<%= form_with model: book,url: books_path, method: :post do |f| %>
+  <div class="field">
+    <%= f.label :title ,"Title" %><br>
+    <%= f.text_field :title,class:"form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :body,"Opinion" %><br>
+    <%= f.text_area :body,class:"form-control" %>
+  </div>
+  <%= f.submit 'Create Book',class:"btn btn-success btn-block mt-3"  %>
+<% end %>
